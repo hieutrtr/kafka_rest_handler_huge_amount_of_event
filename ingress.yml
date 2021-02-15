@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-fanout-ingress
+spec:
+  rules:
+    - host: hieu.com
+      http:
+        paths:
+          - path: /kafka
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka-app
+                port:
+                  number: 3000
