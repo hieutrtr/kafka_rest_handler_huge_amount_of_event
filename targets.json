@@ -1,0 +1,1 @@
+{"method": "POST", "url": "http://localhost:3000/events", "body": "W3sidHlwZSI6ImZlZWQiLCAiYWN0aW9uIjogInZpc2l0ZWQiLCAib2JqZWN0IjogeyJuYW1lIjoiSGlldSIsICJhZ2UiOjMwfSwgImNyZWF0ZWRUaW1lIjogMTYxMjkzNTYzNn1d", "header": {"Content-Type": ["application/json"] }}

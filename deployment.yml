@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-service
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      name: kafka-app
+  template:
+    metadata:
+      labels:
+        name: kafka-app
+    spec:
+      containers:
+        - name: application
+          image: hieutrtr/kafka-service
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000

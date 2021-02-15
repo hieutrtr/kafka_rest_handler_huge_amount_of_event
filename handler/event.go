@@ -50,7 +50,7 @@ func (h *Handler)produceKafkaEvents(events []entity.Event) error {
 	}()
 
 	// Produce messages to topic (asynchronously)
-	topic := "hieu_test_event"
+	topic := "visited_events_parts"
 	for _, event := range events {
 		p.Produce(&kafka.Message{
 			TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
@@ -59,7 +59,7 @@ func (h *Handler)produceKafkaEvents(events []entity.Event) error {
 	}
 
 	// Wait for message deliveries before shutting down
-	p.Flush(15 * 1000)
+	p.Flush(30 * 1000)
 
 	return nil
 }
