@@ -2,12 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: platform-ingress
-  namespace: dev
 spec:
   rules:
       - http:
           paths:
             - path: /kafka
+              pathType: Prefix
               backend:
-                serviceName: kafka-service
-                servicePort: 80
+                service:
+                  name: kafka-service
+                  port:
+                    number: 80
