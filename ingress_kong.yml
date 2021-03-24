@@ -1,0 +1,10 @@
+apiVersion: configuration.konghq.com/v1beta1
+kind: TCPIngress
+metadata:
+  name: kafka-kong-ingress
+spec:
+  rules:
+    - port: 8080
+      backend:
+        serviceName: kafka-service
+        servicePort: 8081
