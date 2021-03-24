@@ -5,7 +5,7 @@ metadata:
   name: kafka-service
 spec:
   ports:
-    - name: TCP
+    - name: tcp
       port: 80
       targetPort: 3000
   selector:
